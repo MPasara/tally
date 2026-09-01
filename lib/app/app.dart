@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tally_mobile/app/core/service_locator.dart';
+import 'package:tally_mobile/app/theme/app_theme.dart';
+import 'package:tally_mobile/app/theme/logic/theme_cubit.dart';
+import 'package:tally_mobile/main_screen.dart';
 
-class App extends StatefulWidget {
-  const new({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(body: Center(child: Text('Material home after DI'))),
+    return BlocProvider.value(
+      value: sl<ThemeCubit>(),
+      child: BlocBuilder<ThemeCubit, AppThemeMode>(
+        builder: (context, state) {
+          return MaterialApp(
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: context.read<ThemeCubit>().flutterThemeMode,
+            home: const MainScreen(),
+          );
+        },
+      ),
     );
   }
 }
