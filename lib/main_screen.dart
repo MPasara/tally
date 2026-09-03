@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:tally_mobile/app/theme/tally_colors.dart';
 import 'package:tally_mobile/features/completed/presentation/completed_screen.dart';
 import 'package:tally_mobile/features/todos/presentation/todos_screen.dart';
 
@@ -14,11 +16,14 @@ class _MainScreenState extends State<MainScreen> {
   var _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<TallyColors>()!;
     return Scaffold(
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) {
-          _selectedIndex = value;
+        backgroundColor: colors.navBar,
+        onTap: (newIndex) {
+          _selectedIndex = newIndex;
+          HapticFeedback.mediumImpact();
           setState(() {});
         },
         currentIndex: _selectedIndex,

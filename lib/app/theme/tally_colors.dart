@@ -3,24 +3,6 @@ import 'package:flutter/material.dart';
 import 'palette.dart';
 
 class TallyColors extends ThemeExtension<TallyColors> {
-  final Color bg;
-  final Color surface;
-  final Color sheetOrDoneTile;
-  final Color navBar; // dark-only distinct slot; equals surface in light
-  final Color text;
-  final Color bodyCopy;
-  final Color secondaryText;
-  final Color muted;
-  final Color border;
-  final Color rule;
-  final Color borderHover;
-  final Color accent;
-  final Color accentIcon;
-  final Color accentText;
-  final Color accentTintFill;
-  final Color accentTintPressed;
-  final Color scrim;
-
   const TallyColors({
     required this.bg,
     required this.surface,
@@ -40,6 +22,24 @@ class TallyColors extends ThemeExtension<TallyColors> {
     required this.accentTintPressed,
     required this.scrim,
   });
+
+  final Color bg;
+  final Color surface;
+  final Color sheetOrDoneTile;
+  final Color navBar;
+  final Color text;
+  final Color bodyCopy;
+  final Color secondaryText;
+  final Color muted;
+  final Color border;
+  final Color rule;
+  final Color borderHover;
+  final Color accent;
+  final Color accentIcon;
+  final Color accentText;
+  final Color accentTintFill;
+  final Color accentTintPressed;
+  final Color scrim;
 
   static const light = TallyColors(
     bg: nocturneLightBg,

@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tally_mobile/app/theme/logic/theme_cubit.dart';
+import 'package:tally_mobile/app/theme/tally_colors.dart';
+import 'package:tally_mobile/features/todos/presentation/widgets/tally_drawer.dart';
 
 class TodosScreen extends StatelessWidget {
   const new({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<TallyColors>()!;
+
     return Scaffold(
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () => context.read<ThemeCubit>().setLight(),
-              child: Text('Light'),
-            ),
-            SizedBox(width: 6),
-            ElevatedButton(
-              onPressed: () => context.read<ThemeCubit>().setSystem(),
-              child: Text('System'),
-            ),
-            SizedBox(width: 6),
-            ElevatedButton(
-              onPressed: () => context.read<ThemeCubit>().setDark(),
-              child: Text('Dark'),
-            ),
-          ],
+      endDrawer: TallyDrawer(),
+      appBar: AppBar(
+        backgroundColor: colors.bg,
+        scrolledUnderElevation: 0,
+        elevation: 0,
+      ),
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(16)),
+          border: Border.all(color: colors.accent, style: BorderStyle.solid),
+        ),
+        child: FloatingActionButton(
+          backgroundColor: colors.navBar,
+          onPressed: () {},
+          child: Icon(Icons.add, color: colors.secondaryText),
         ),
       ),
+      body: Center(child: Text('Todos')),
     );
   }
 }
