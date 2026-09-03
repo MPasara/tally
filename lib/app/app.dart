@@ -12,12 +12,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: sl<ThemeCubit>(),
-      child: BlocBuilder<ThemeCubit, AppThemeMode>(
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, state) {
           return MaterialApp(
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
-            themeMode: context.read<ThemeCubit>().flutterThemeMode,
+            themeMode: context.read<ThemeCubit>().selectedThemeMode,
             home: const MainScreen(),
           );
         },

@@ -13,6 +13,8 @@ class TallyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<TallyColors>()!;
+    final selectedTheme = context.watch<ThemeCubit>().selectedThemeMode;
+
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
       child: Drawer(
@@ -39,6 +41,7 @@ class TallyDrawer extends StatelessWidget {
                     ThemeSwitcherButton(
                       icon: Icon(Icons.light_mode_outlined),
                       label: 'Light',
+                      isSelected: selectedTheme.isLight,
                       onTap: () {
                         HapticFeedback.mediumImpact();
                         context.read<ThemeCubit>().setLight();
@@ -48,6 +51,7 @@ class TallyDrawer extends StatelessWidget {
                     ThemeSwitcherButton(
                       icon: Icon(Icons.phone_android_outlined),
                       label: 'System',
+                      isSelected: selectedTheme.isSystem,
                       onTap: () {
                         HapticFeedback.mediumImpact();
                         context.read<ThemeCubit>().setSystem();
@@ -56,6 +60,7 @@ class TallyDrawer extends StatelessWidget {
                     SizedBox(width: 6),
                     ThemeSwitcherButton(
                       icon: Icon(Icons.dark_mode_outlined),
+                      isSelected: selectedTheme.isDark,
                       label: 'Dark',
                       onTap: () {
                         HapticFeedback.mediumImpact();

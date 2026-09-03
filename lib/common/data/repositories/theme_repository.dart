@@ -14,7 +14,7 @@ abstract interface class ThemeRepsitory {
 class ThemeRepsitoryImpl implements ThemeRepsitory {
   final LocalStorageService _storageService;
 
-  new(this._storageService);
+  ThemeRepsitoryImpl(this._storageService);
   @override
   EitherFailureOr<ThemeMode> getThemeMode() async {
     try {
@@ -24,8 +24,10 @@ class ThemeRepsitoryImpl implements ThemeRepsitory {
           return Right(ThemeMode.light);
         case 'dark':
           return Right(ThemeMode.dark);
-        default:
+        case 'system':
           return Right(ThemeMode.system);
+        default:
+          return Right(ThemeMode.light);
       }
     } catch (e, st) {
       return Left(Failure(title: 'Get theme failed', error: e, stackTrace: st));
