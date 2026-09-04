@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tally_mobile/common/data/repositories/theme_repository.dart';
 
-//enum AppThemeMode { light, dark, system }
 
 @lazySingleton
 class ThemeCubit extends Cubit<ThemeMode> {

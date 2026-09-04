@@ -4,6 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 abstract interface class LocalStorageService {
   Future<String?> getThemeMode();
   Future<void> setThemeMode(String themeMode);
+
+  Future<String?> getLanguageCode();
+  Future<void> setLanguageCode(String languageCode);
 }
 
 @LazySingleton(as: LocalStorageService)
@@ -21,5 +24,17 @@ class LocalStorageServiceImpl implements LocalStorageService {
   Future<void> setThemeMode(String themeMode) async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setString(_themeKey, themeMode);
+  }
+
+  @override
+  Future<String?> getLanguageCode() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_localeKey);
+  }
+
+  @override
+  Future<void> setLanguageCode(String languageCode) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_localeKey, languageCode);
   }
 }

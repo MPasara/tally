@@ -24,10 +24,8 @@ class ThemeRepsitoryImpl implements ThemeRepsitory {
           return Right(ThemeMode.light);
         case 'dark':
           return Right(ThemeMode.dark);
-        case 'system':
-          return Right(ThemeMode.system);
         default:
-          return Right(ThemeMode.light);
+          return Right(ThemeMode.system);
       }
     } catch (e, st) {
       return Left(Failure(title: 'Get theme failed', error: e, stackTrace: st));

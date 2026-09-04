@@ -1,0 +1,10 @@
+{
+  "@@locale": "en",
+  "settings": "Settings",
+  "light": "Light",
+  "system": "System",
+  "dark": "Dark",
+  "language": "Language",
+  "english": "English",
+  "croatian": "Croatian"
+}

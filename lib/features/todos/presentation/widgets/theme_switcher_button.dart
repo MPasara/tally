@@ -12,7 +12,7 @@ class ThemeSwitcherButton extends StatelessWidget {
 
   final Widget icon;
   final String label;
-  final Function() onTap;
+  final VoidCallback onTap;
   final bool isSelected;
 
   @override
@@ -26,7 +26,8 @@ class ThemeSwitcherButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         onTap: onTap,
         child: Ink(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
+          width: double.infinity, // fill the Expanded space, don't hug content
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
           decoration: BoxDecoration(
             color: colors.accentTintFill,
             border: isSelected ? Border.all(color: colors.accent) : null,
@@ -34,7 +35,16 @@ class ThemeSwitcherButton extends StatelessWidget {
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [icon, Text(label)],
+            children: [
+              icon,
+              const SizedBox(height: 2),
+              Text(
+                label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
         ),
       ),
