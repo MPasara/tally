@@ -119,6 +119,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Task`
+  String get new_task {
+    return Intl.message(
+      'New Task',
+      name: 'new_task',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What needs doing?`
+  String get task_title_hint {
+    return Intl.message(
+      'What needs doing?',
+      name: 'task_title_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A little more detail...`
+  String get task_description_hint {
+    return Intl.message(
+      'A little more detail...',
+      name: 'task_description_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Due date`
+  String get due_date {
+    return Intl.message(
+      'Due date',
+      name: 'due_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get select_date {
+    return Intl.message(
+      'Select Date',
+      name: 'select_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Urgency`
+  String get urgency {
+    return Intl.message(
+      'Urgency',
+      name: 'urgency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add todo`
+  String get add_todo {
+    return Intl.message(
+      'Add todo',
+      name: 'add_todo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message(
+      'Today',
+      name: 'today',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Low`
+  String get low {
+    return Intl.message(
+      'Low',
+      name: 'low',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medium`
+  String get medim {
+    return Intl.message(
+      'Medium',
+      name: 'medim',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `High`
+  String get high {
+    return Intl.message(
+      'High',
+      name: 'high',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

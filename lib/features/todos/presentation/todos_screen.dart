@@ -23,7 +23,30 @@ class TodosScreen extends StatelessWidget {
         ),
         child: FloatingActionButton(
           backgroundColor: colors.navBar,
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return Container(
+                  //height: 500,
+                  color: colors.bg,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: .center,
+                      mainAxisSize: .min,
+                      children: <Widget>[
+                        const Text('Modal BottomSheet'),
+                        ElevatedButton(
+                          child: const Text('Close BottomSheet'),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+          },
           child: Icon(Icons.add, color: colors.secondaryText),
         ),
       ),

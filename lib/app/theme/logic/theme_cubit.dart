@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tally_mobile/common/data/repositories/theme_repository.dart';
 
-
-@lazySingleton
+@singleton
 class ThemeCubit extends Cubit<ThemeMode> {
   ThemeCubit(this._repository) : super(ThemeMode.system) {
     getAppTheme();

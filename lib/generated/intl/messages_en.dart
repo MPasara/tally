@@ -22,12 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_todo": MessageLookupByLibrary.simpleMessage("Add todo"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "croatian": MessageLookupByLibrary.simpleMessage("Croatian"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
+        "due_date": MessageLookupByLibrary.simpleMessage("Due date"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "high": MessageLookupByLibrary.simpleMessage("High"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
+        "low": MessageLookupByLibrary.simpleMessage("Low"),
+        "medim": MessageLookupByLibrary.simpleMessage("Medium"),
+        "new_task": MessageLookupByLibrary.simpleMessage("New Task"),
+        "select_date": MessageLookupByLibrary.simpleMessage("Select Date"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "system": MessageLookupByLibrary.simpleMessage("System")
+        "system": MessageLookupByLibrary.simpleMessage("System"),
+        "task_description_hint":
+            MessageLookupByLibrary.simpleMessage("A little more detail..."),
+        "task_title_hint":
+            MessageLookupByLibrary.simpleMessage("What needs doing?"),
+        "today": MessageLookupByLibrary.simpleMessage("Today"),
+        "urgency": MessageLookupByLibrary.simpleMessage("Urgency")
       };
 }
