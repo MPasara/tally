@@ -6,5 +6,18 @@
   "dark": "Tamno",
   "language": "Jezik",
   "english": "Engleski",
-  "croatian": "Hrvatski"
+  "croatian": "Hrvatski",
+  "cancel": "Odustani",
+  "done": "Gotovo",
+  "new_todo": "Novi zadatak",
+  "task_title_hint": "Što treba obaviti?",
+  "task_description_hint": "Malo više detalja...",
+  "due_date": "Rok",
+  "select_date": "Odaberi datum",
+  "urgency": "Hitnost",
+  "add_todo": "Dodaj zadatak",
+  "today": "Danas",
+  "low": "Niska",
+  "medium": "Srednja",
+  "high": "Visoka"
 }

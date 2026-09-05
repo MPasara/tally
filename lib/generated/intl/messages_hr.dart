@@ -22,12 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_todo": MessageLookupByLibrary.simpleMessage("Dodaj zadatak"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Odustani"),
         "croatian": MessageLookupByLibrary.simpleMessage("Hrvatski"),
         "dark": MessageLookupByLibrary.simpleMessage("Tamno"),
+        "done": MessageLookupByLibrary.simpleMessage("Gotovo"),
+        "due_date": MessageLookupByLibrary.simpleMessage("Rok"),
         "english": MessageLookupByLibrary.simpleMessage("Engleski"),
+        "high": MessageLookupByLibrary.simpleMessage("Visoka"),
         "language": MessageLookupByLibrary.simpleMessage("Jezik"),
         "light": MessageLookupByLibrary.simpleMessage("Svjetlo"),
+        "low": MessageLookupByLibrary.simpleMessage("Niska"),
+        "medium": MessageLookupByLibrary.simpleMessage("Srednja"),
+        "new_todo": MessageLookupByLibrary.simpleMessage("Novi zadatak"),
+        "select_date": MessageLookupByLibrary.simpleMessage("Odaberi datum"),
         "settings": MessageLookupByLibrary.simpleMessage("Postavke"),
-        "system": MessageLookupByLibrary.simpleMessage("Sustav")
+        "system": MessageLookupByLibrary.simpleMessage("Sustav"),
+        "task_description_hint":
+            MessageLookupByLibrary.simpleMessage("Malo više detalja..."),
+        "task_title_hint":
+            MessageLookupByLibrary.simpleMessage("Što treba obaviti?"),
+        "today": MessageLookupByLibrary.simpleMessage("Danas"),
+        "urgency": MessageLookupByLibrary.simpleMessage("Hitnost")
       };
 }

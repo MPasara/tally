@@ -83,9 +83,9 @@ class TallyDrawer extends StatelessWidget {
                 Divider(color: colors.muted),
                 RadioGroup<String>(
                   groupValue: selectedLocale.languageCode,
-                  onChanged: (newValue) {
-                    if (newValue != null) {
-                      context.read<LocaleCubit>().changeLocale(newValue);
+                  onChanged: (newLocale) {
+                    if (newLocale != null) {
+                      context.read<LocaleCubit>().changeLocale(newLocale);
                     }
                     HapticFeedback.mediumImpact();
                   },
