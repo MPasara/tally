@@ -6,6 +6,7 @@ const nocturneLightBg = Color(0xFFF4F4F7); // bg / ground
 const nocturneLightSurface = Color(0xFFFBFBFD); // surface / sheet / nav
 const nocturneLightCompletedTile = Color(0xFFF8F8FB); // completed tile
 const nocturneLightText = Color(0xFF161826); // text
+const nocturneLightTextFieldFill = Color(0xffF0F0F5);
 
 const nocturneLightBodyCopy = Color(0xFF3F424D); // body copy
 const nocturneLightSecondaryText = Color(0xFF595D6C); // secondary text
@@ -32,10 +33,11 @@ const nocturneLightSplashGradientEnd = nocturneLightBg;
 
 // ─── Nocturne Dark ─────────────────────────────────────────────────────────
 
-const nocturneDarkBg = Color(0xFF161826); // bg / ground
+const nocturneDarkBg = Color(0xFF141424); // bg / ground
 const nocturneDarkSurface = Color(0xFF232532); // surface / tile
 const nocturneDarkSheet = Color(0xFF1C1E2C); // sheet / dialog / done tile
 const nocturneDarkNavBar = Color(0xFF1A1C2B); // nav bar / drawer
+const nocturneDarkTextFieldFill = Color(0xff141423);
 
 const nocturneDarkText = Color(0xFFE9E9ED); // text
 const nocturneDarkBodyCopy = Color(0xFFCFD3E5); // body copy

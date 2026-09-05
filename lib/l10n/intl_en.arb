@@ -9,7 +9,7 @@
   "croatian": "Croatian",
   "cancel": "Cancel",
   "done": "Done",
-  "new_task": "New Task",
+  "new_todo": "New Todo",
   "task_title_hint": "What needs doing?",
   "task_description_hint": "A little more detail...",
   "due_date": "Due date",
@@ -18,6 +18,6 @@
   "add_todo": "Add todo",
   "today": "Today",
   "low": "Low",
-  "medim": "Medium",
+  "medium": "Medium",
   "high": "High"
 }

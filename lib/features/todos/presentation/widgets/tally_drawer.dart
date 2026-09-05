@@ -87,6 +87,7 @@ class TallyDrawer extends StatelessWidget {
                     if (newValue != null) {
                       context.read<LocaleCubit>().changeLocale(newValue);
                     }
+                    HapticFeedback.mediumImpact();
                   },
                   child: Column(
                     crossAxisAlignment: .start,

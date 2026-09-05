@@ -11,7 +11,7 @@ enum TaskUrgency {
       case TaskUrgency.low:
         return S.of(context).low;
       case TaskUrgency.medium:
-        return S.of(context).medim;
+        return S.of(context).medium;
       case TaskUrgency.high:
         return S.of(context).high;
     }

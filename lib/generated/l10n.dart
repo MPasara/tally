@@ -140,11 +140,11 @@ class S {
     );
   }
 
-  /// `New Task`
-  String get new_task {
+  /// `New Todo`
+  String get new_todo {
     return Intl.message(
-      'New Task',
-      name: 'new_task',
+      'New Todo',
+      name: 'new_todo',
       desc: '',
       args: [],
     );
@@ -231,10 +231,10 @@ class S {
   }
 
   /// `Medium`
-  String get medim {
+  String get medium {
     return Intl.message(
       'Medium',
-      name: 'medim',
+      name: 'medium',
       desc: '',
       args: [],
     );

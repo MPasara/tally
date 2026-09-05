@@ -21,6 +21,7 @@ class TallyColors extends ThemeExtension<TallyColors> {
     required this.accentTintFill,
     required this.accentTintPressed,
     required this.scrim,
+    required this.textFieldFill,
   });
 
   final Color bg;
@@ -40,6 +41,7 @@ class TallyColors extends ThemeExtension<TallyColors> {
   final Color accentTintFill;
   final Color accentTintPressed;
   final Color scrim;
+  final Color textFieldFill;
 
   static const light = TallyColors(
     bg: nocturneLightBg,
@@ -59,6 +61,7 @@ class TallyColors extends ThemeExtension<TallyColors> {
     accentTintFill: nocturneLightAccentTintFill,
     accentTintPressed: nocturneLightAccentTintPressed,
     scrim: nocturneLightScrim,
+    textFieldFill: nocturneLightTextFieldFill,
   );
 
   static const dark = TallyColors(
@@ -79,6 +82,7 @@ class TallyColors extends ThemeExtension<TallyColors> {
     accentTintFill: nocturneDarkAccentTintFill,
     accentTintPressed: nocturneDarkAccentTintPressed,
     scrim: nocturneDarkScrim,
+    textFieldFill: nocturneDarkTextFieldFill,
   );
 
   @override
@@ -109,6 +113,7 @@ class TallyColors extends ThemeExtension<TallyColors> {
         t,
       )!,
       scrim: Color.lerp(scrim, other.scrim, t)!,
+      textFieldFill: Color.lerp(textFieldFill, other.textFieldFill, t)!,
     );
   }
 }

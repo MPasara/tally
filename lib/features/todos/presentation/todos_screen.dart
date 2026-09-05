@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tally_mobile/app/theme/tally_colors.dart';
+import 'package:tally_mobile/features/todos/presentation/widgets/add_todo_bottom_sheet.dart';
 import 'package:tally_mobile/features/todos/presentation/widgets/tally_drawer.dart';
 
 class TodosScreen extends StatelessWidget {
-  const new({super.key});
+  const TodosScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).extension<TallyColors>()!;
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       endDrawer: TallyDrawer(),
       appBar: AppBar(
         backgroundColor: colors.bg,
@@ -25,25 +27,12 @@ class TodosScreen extends StatelessWidget {
           backgroundColor: colors.navBar,
           onPressed: () {
             showModalBottomSheet(
+              isScrollControlled: true,
               context: context,
+              enableDrag: true,
+              showDragHandle: true,
               builder: (BuildContext context) {
-                return Container(
-                  //height: 500,
-                  color: colors.bg,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: .center,
-                      mainAxisSize: .min,
-                      children: <Widget>[
-                        const Text('Modal BottomSheet'),
-                        ElevatedButton(
-                          child: const Text('Close BottomSheet'),
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
+                return const AddTodoBottomSheet();
               },
             );
           },
