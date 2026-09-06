@@ -36,7 +36,7 @@ class TodosScreen extends StatelessWidget {
               },
             );
           },
-          child: Icon(Icons.add, color: colors.secondaryText),
+          child: Icon(Icons.add, color: colors.accent),
         ),
       ),
       body: Center(child: Text('Todos')),

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:tally_mobile/app/theme/tally_colors.dart';
 import 'package:tally_mobile/features/completed/presentation/completed_screen.dart';
 import 'package:tally_mobile/features/todos/presentation/todos_screen.dart';
+import 'package:tally_mobile/generated/l10n.dart';
 
 class MainScreen extends StatefulWidget {
   const new({super.key});
@@ -30,11 +31,11 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.circle_outlined),
-            label: 'Todo',
+            label: S.of(context).todo,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.check_circle_outlined),
-            label: 'Done',
+            label: S.of(context).done,
           ),
         ],
       ),

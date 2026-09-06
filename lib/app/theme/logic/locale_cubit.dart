@@ -3,11 +3,12 @@ import 'dart:ui';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tally_mobile/common/data/repositories/locale_repository.dart';
-import 'package:tally_mobile/common/utils/constants.dart';
+import 'package:tally_mobile/common/utils/language_constants.dart';
 
 @singleton
 class LocaleCubit extends Cubit<Locale> {
-  LocaleCubit(this._localeRepository) : super(const Locale(Constants.eng)) {
+  LocaleCubit(this._localeRepository)
+    : super(const Locale(LanguageConstants.eng)) {
     loadLocale();
   }
 

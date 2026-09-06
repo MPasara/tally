@@ -1,7 +1,7 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:tally_mobile/common/data/local_storage_service.dart';
+import 'package:tally_mobile/common/data/services/local_storage_service.dart';
 import 'package:tally_mobile/common/domain/failure.dart';
 import 'package:tally_mobile/common/utils/either.dart';
 

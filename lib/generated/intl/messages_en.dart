@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "task_title_hint":
             MessageLookupByLibrary.simpleMessage("What needs doing?"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
+        "todo": MessageLookupByLibrary.simpleMessage("Todo"),
         "urgency": MessageLookupByLibrary.simpleMessage("Urgency")
       };
 }

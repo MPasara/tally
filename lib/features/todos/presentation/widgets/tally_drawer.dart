@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tally_mobile/app/theme/logic/locale_cubit.dart';
 import 'package:tally_mobile/app/theme/logic/theme_cubit.dart';
 import 'package:tally_mobile/app/theme/tally_colors.dart';
-import 'package:tally_mobile/common/utils/constants.dart';
+import 'package:tally_mobile/common/utils/language_constants.dart';
 import 'package:tally_mobile/features/todos/presentation/widgets/theme_switcher_button.dart';
 import 'package:tally_mobile/generated/l10n.dart';
 
@@ -94,12 +94,12 @@ class TallyDrawer extends StatelessWidget {
                     children: [
                       Text(S.of(context).language),
                       RadioListTile<String>(
-                        value: Constants.eng,
+                        value: LanguageConstants.eng,
                         title: Text(S.of(context).english),
                       ),
                       // const Divider(),
                       RadioListTile<String>(
-                        value: Constants.cro,
+                        value: LanguageConstants.cro,
                         title: Text(S.of(context).croatian),
                       ),
                     ],
