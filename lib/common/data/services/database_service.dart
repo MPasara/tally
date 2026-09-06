@@ -6,17 +6,19 @@ import 'package:tally_mobile/common/utils/sembast_constants.dart';
 import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
 
 abstract interface class DatabaseService {
-  Future<void> initDatabases();
+  Future<void> initDatabase();
   Future<void> createTodo(Todo todo);
 }
 
 @LazySingleton(as: DatabaseService)
 class DatabaseServiceImpl implements DatabaseService {
-  final _storeRef = intMapStoreFactory.store(SembastConstants.todosStore);
+  final _storeRef = stringMapStoreFactory.store(
+    SembastConstants.todosStore,
+  ); // was intMapStoreFactory
   late final Database _database;
 
   @override
-  Future<void> initDatabases() async {
+  Future<void> initDatabase() async {
     final dir = await getApplicationDocumentsDirectory();
     await dir.create(recursive: true);
     final dbPath = join(dir.path, SembastConstants.dbName);
@@ -25,6 +27,6 @@ class DatabaseServiceImpl implements DatabaseService {
 
   @override
   Future<void> createTodo(Todo todo) async {
-    
+    await _storeRef.record(todo.id).put(_database, todo.toMap());
   }
 }

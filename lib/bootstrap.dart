@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tally_mobile/app/core/service_locator.dart';
+import 'package:tally_mobile/common/data/services/database_service.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -32,6 +33,12 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   await runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
     await configureDependencies();
+    try {
+      await sl<DatabaseService>().initDatabase();
+    } catch (e, st) {
+      log('Failed to initialize database: $e', stackTrace: st);
+      rethrow;
+    }
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,

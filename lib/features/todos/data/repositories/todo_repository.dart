@@ -1,4 +1,5 @@
 import 'package:either_dart/either.dart';
+import 'package:injectable/injectable.dart';
 import 'package:tally_mobile/common/data/services/database_service.dart';
 import 'package:tally_mobile/common/domain/failure.dart';
 import 'package:tally_mobile/common/utils/either.dart';
@@ -8,6 +9,7 @@ abstract class TodoRepository {
   EitherFailureOr<void> createTodo(Todo todo);
 }
 
+@LazySingleton(as: TodoRepository)
 class TodoRepositoryImpl implements TodoRepository {
   TodoRepositoryImpl(this._database);
 
