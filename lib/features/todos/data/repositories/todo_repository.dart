@@ -7,6 +7,7 @@ import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
 
 abstract class TodoRepository {
   EitherFailureOr<void> createTodo(Todo todo);
+  EitherFailureOr<List<Todo>> getAllTodos();
 }
 
 @LazySingleton(as: TodoRepository)
@@ -23,6 +24,18 @@ class TodoRepositoryImpl implements TodoRepository {
     } catch (e, st) {
       return Left(
         Failure(title: 'Create todo failed', error: e, stackTrace: st),
+      );
+    }
+  }
+
+  @override
+  EitherFailureOr<List<Todo>> getAllTodos() async {
+    try {
+      final todos = await _database.fetchAllTodos();
+      return Right(todos);
+    } catch (e, st) {
+      return Left(
+        Failure(title: 'Get all todos failed', error: e, stackTrace: st),
       );
     }
   }

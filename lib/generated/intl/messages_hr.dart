@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Što treba obaviti?"),
         "today": MessageLookupByLibrary.simpleMessage("Danas"),
         "todo": MessageLookupByLibrary.simpleMessage("Zadaci"),
+        "todos": MessageLookupByLibrary.simpleMessage("Zadaci"),
         "urgency": MessageLookupByLibrary.simpleMessage("Hitnost")
       };
 }

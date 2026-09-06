@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("What needs doing?"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "todo": MessageLookupByLibrary.simpleMessage("Todo"),
+        "todos": MessageLookupByLibrary.simpleMessage("Todos"),
         "urgency": MessageLookupByLibrary.simpleMessage("Urgency")
       };
 }

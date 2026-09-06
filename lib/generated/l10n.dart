@@ -60,6 +60,16 @@ class S {
     );
   }
 
+  /// `Todos`
+  String get todos {
+    return Intl.message(
+      'Todos',
+      name: 'todos',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Settings`
   String get settings {
     return Intl.message(

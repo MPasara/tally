@@ -8,6 +8,7 @@ import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
 abstract interface class DatabaseService {
   Future<void> initDatabase();
   Future<void> createTodo(Todo todo);
+  Future<List<Todo>> fetchAllTodos();
 }
 
 @LazySingleton(as: DatabaseService)
@@ -28,5 +29,15 @@ class DatabaseServiceImpl implements DatabaseService {
   @override
   Future<void> createTodo(Todo todo) async {
     await _storeRef.record(todo.id).put(_database, todo.toMap());
+  }
+
+  @override
+  Future<List<Todo>> fetchAllTodos() async {
+    final records = await _storeRef.find(
+      _database,
+      finder: Finder(sortOrders: [SortOrder('dueDate')]),
+    );
+
+    return records.map((record) => todoFromMap(record.value)).toList();
   }
 }

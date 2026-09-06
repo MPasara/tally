@@ -1,6 +1,7 @@
 {
   "@@locale": "en",
   "todo": "Todo",
+  "todos": "Todos",
   "settings": "Settings",
   "light": "Light",
   "system": "System",

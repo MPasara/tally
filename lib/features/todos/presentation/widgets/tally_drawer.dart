@@ -30,7 +30,10 @@ class TallyDrawer extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(S.of(context).settings),
+                    Text(
+                      S.of(context).settings,
+                      style: TextStyle(fontSize: 20),
+                    ),
                     Spacer(),
                     IconButton(
                       onPressed: () => Navigator.of(context).pop(),
@@ -92,7 +95,10 @@ class TallyDrawer extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: .start,
                     children: [
-                      Text(S.of(context).language),
+                      Text(
+                        S.of(context).language,
+                        style: TextStyle(fontSize: 20),
+                      ),
                       RadioListTile<String>(
                         value: LanguageConstants.eng,
                         title: Text(S.of(context).english),
