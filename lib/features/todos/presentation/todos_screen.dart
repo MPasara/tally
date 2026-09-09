@@ -7,6 +7,7 @@ import 'package:tally_mobile/features/todos/presentation/logic/cubits/get_todos_
 import 'package:tally_mobile/features/todos/presentation/logic/state/get_todos_state.dart';
 import 'package:tally_mobile/features/todos/presentation/widgets/add_todo_bottom_sheet.dart';
 import 'package:tally_mobile/features/todos/presentation/widgets/tally_drawer.dart';
+import 'package:tally_mobile/features/todos/presentation/widgets/todo_tile.dart';
 import 'package:tally_mobile/generated/l10n.dart';
 
 class TodosScreen extends StatelessWidget {
@@ -70,8 +71,8 @@ class _TodosView extends StatelessWidget {
               child: CircularProgressIndicator(),
             ),
             GetTodosError(:final failure) => Center(child: Text(failure.title)),
-            GetTodosLoaded(:final todos) when todos.isEmpty => const Center(
-              child: Text('No todos yet'),
+            GetTodosLoaded(:final todos) when todos.isEmpty => Center(
+              child: Text(S.of(context).no_todos),
             ),
             GetTodosLoaded(:final todos) => RefreshIndicator(
               onRefresh: () async {
@@ -83,25 +84,13 @@ class _TodosView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final todo = todos[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 4,
-                      horizontal: 14,
+                    padding: EdgeInsets.only(
+                      top: index == 0 ? 0 : 4,
+                      bottom: 4,
+                      left: 14,
+                      right: 14,
                     ),
-                    child: ListTile(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusGeometry.circular(10),
-                      ),
-                      title: Text(todo.title),
-                      tileColor: colors.surface,
-                      subtitle: Text(todo.description),
-                      trailing: Text(todo.urgency.name),
-                      leading: Checkbox(
-                        value: todo.completed,
-                        onChanged: (_) {
-                          // TODO: wire up toggle-complete cubit later
-                        },
-                      ),
-                    ),
+                    child: TodoTile(colors: colors, todo: todo),
                   );
                 },
               ),

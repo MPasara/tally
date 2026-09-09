@@ -21,5 +21,7 @@
   "today": "Danas",
   "low": "Niska",
   "medium": "Srednja",
-  "high": "Visoka"
+  "high": "Visoka",
+  "no_todos": "Još nema zadataka",
+  "due": "Rok"
 }

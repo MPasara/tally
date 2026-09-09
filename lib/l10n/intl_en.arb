@@ -21,5 +21,7 @@
   "today": "Today",
   "low": "Low",
   "medium": "Medium",
-  "high": "High"
+  "high": "High",
+  "no_todos": "No todos yet",
+  "due": "Due"
 }

@@ -74,9 +74,11 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
                             hintText: S.of(context).task_title_hint,
                             fillColor: colors.textFieldFill,
                             filled: true,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: colors.border),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colors.accent),
                             ),
                           ),
                         ),
@@ -88,9 +90,11 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
                             hintText: S.of(context).task_description_hint,
                             fillColor: colors.textFieldFill,
                             filled: true,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: colors.muted),
-                              borderRadius: BorderRadius.circular(8),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colors.border),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colors.accent),
                             ),
                           ),
                         ),
@@ -112,8 +116,11 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
                           decoration: InputDecoration(
                             fillColor: colors.textFieldFill,
                             filled: true,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colors.border),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: colors.accent),
                             ),
                           ),
                         ),

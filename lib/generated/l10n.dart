@@ -269,6 +269,26 @@ class S {
       args: [],
     );
   }
+
+  /// `No todos yet`
+  String get no_todos {
+    return Intl.message(
+      'No todos yet',
+      name: 'no_todos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Due`
+  String get due {
+    return Intl.message(
+      'Due',
+      name: 'due',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
