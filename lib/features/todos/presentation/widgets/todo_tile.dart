@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tally_mobile/app/theme/tally_colors.dart';
 import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
+import 'package:tally_mobile/features/todos/presentation/widgets/delete_todo_dialog.dart';
 import 'package:tally_mobile/generated/l10n.dart';
 
 class TodoTile extends StatelessWidget {
@@ -92,6 +93,17 @@ class TodoTile extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              IconButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return DeleteTodoDialog();
+                    },
+                  );
+                },
+                icon: Icon(Icons.delete_outline),
               ),
             ],
           ),

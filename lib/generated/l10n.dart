@@ -289,6 +289,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Delete to do?`
+  String get delete_todo {
+    return Intl.message(
+      'Delete to do?',
+      name: 'delete_todo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure? This action cannot be undone.`
+  String get delete_todo_desc {
+    return Intl.message(
+      'Are you sure? This action cannot be undone.',
+      name: 'delete_todo_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

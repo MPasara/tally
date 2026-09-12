@@ -26,6 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Odustani"),
         "croatian": MessageLookupByLibrary.simpleMessage("Hrvatski"),
         "dark": MessageLookupByLibrary.simpleMessage("Tamno"),
+        "delete": MessageLookupByLibrary.simpleMessage("Izbriši"),
+        "delete_todo": MessageLookupByLibrary.simpleMessage("Izbriši zadatak?"),
+        "delete_todo_desc": MessageLookupByLibrary.simpleMessage(
+            "Jeste li sigurni? Ova se radnja ne može poništiti."),
         "done": MessageLookupByLibrary.simpleMessage("Gotovo"),
         "due": MessageLookupByLibrary.simpleMessage("Rok"),
         "due_date": MessageLookupByLibrary.simpleMessage("Rok"),

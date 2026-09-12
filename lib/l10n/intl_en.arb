@@ -23,5 +23,8 @@
   "medium": "Medium",
   "high": "High",
   "no_todos": "No todos yet",
-  "due": "Due"
+  "due": "Due",
+  "delete_todo": "Delete to do?",
+  "delete_todo_desc": "Are you sure? This action cannot be undone.",
+  "delete": "Delete"
 }

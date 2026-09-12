@@ -26,6 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "croatian": MessageLookupByLibrary.simpleMessage("Croatian"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "delete_todo": MessageLookupByLibrary.simpleMessage("Delete to do?"),
+        "delete_todo_desc": MessageLookupByLibrary.simpleMessage(
+            "Are you sure? This action cannot be undone."),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "due": MessageLookupByLibrary.simpleMessage("Due"),
         "due_date": MessageLookupByLibrary.simpleMessage("Due date"),
