@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:tally_mobile/app/theme/tally_colors.dart';
 import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
+import 'package:tally_mobile/features/todos/presentation/logic/blocs/todo_bloc.dart';
 import 'package:tally_mobile/features/todos/presentation/widgets/delete_todo_dialog.dart';
 import 'package:tally_mobile/generated/l10n.dart';
 
@@ -96,10 +98,14 @@ class TodoTile extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
+                  final todoBloc = context.read<TodoBloc>();
                   showDialog(
                     context: context,
                     builder: (context) {
-                      return DeleteTodoDialog();
+                      return BlocProvider.value(
+                        value: todoBloc,
+                        child: DeleteTodoDialog(id: todo.id),
+                      );
                     },
                   );
                 },

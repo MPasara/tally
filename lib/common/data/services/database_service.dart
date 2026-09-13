@@ -9,6 +9,7 @@ abstract interface class DatabaseService {
   Future<void> initDatabase();
   Future<void> createTodo(Todo todo);
   Future<List<Todo>> fetchAllTodos();
+  Future<void> deleteTodo(String id);
 }
 
 @LazySingleton(as: DatabaseService)
@@ -39,5 +40,10 @@ class DatabaseServiceImpl implements DatabaseService {
     );
 
     return records.map((record) => todoFromMap(record.value)).toList();
+  }
+
+  @override
+  Future<void> deleteTodo(String id) async {
+    await _storeRef.record(id).delete(_database);
   }
 }

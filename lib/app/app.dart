@@ -7,6 +7,7 @@ import 'package:tally_mobile/app/theme/logic/locale_cubit.dart';
 import 'package:tally_mobile/app/theme/logic/theme_cubit.dart';
 import 'package:tally_mobile/generated/l10n.dart';
 import 'package:tally_mobile/main_screen.dart';
+import 'package:toastification/toastification.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -23,17 +24,19 @@ class App extends StatelessWidget {
 
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, state) {
-          return MaterialApp(
-            locale: context.watch<LocaleCubit>().state,
-            supportedLocales: S.delegate.supportedLocales,
-            localizationsDelegates: [
-              S.delegate,
-              ...GlobalMaterialLocalizations.delegates,
-            ],
-            theme: AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
-            themeMode: context.read<ThemeCubit>().selectedThemeMode,
-            home: const MainScreen(),
+          return ToastificationWrapper(
+            child: MaterialApp(
+              locale: context.watch<LocaleCubit>().state,
+              supportedLocales: S.delegate.supportedLocales,
+              localizationsDelegates: [
+                S.delegate,
+                ...GlobalMaterialLocalizations.delegates,
+              ],
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
+              themeMode: context.read<ThemeCubit>().selectedThemeMode,
+              home: const MainScreen(),
+            ),
           );
         },
       ),

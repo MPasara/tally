@@ -26,5 +26,6 @@
   "due": "Rok",
   "delete_todo": "Izbriši zadatak?",
   "delete_todo_desc": "Jeste li sigurni? Ova se radnja ne može poništiti.",
-  "delete": "Izbriši"
+  "delete": "Izbriši",
+  "todo_deleted": "Zadatak obrisan"
 }

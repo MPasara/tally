@@ -7,6 +7,7 @@ import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
 
 abstract class TodoRepository {
   EitherFailureOr<void> createTodo(Todo todo);
+  EitherFailureOr<void> deleteTodo(String id);
   EitherFailureOr<List<Todo>> getAllTodos();
 }
 
@@ -36,6 +37,18 @@ class TodoRepositoryImpl implements TodoRepository {
     } catch (e, st) {
       return Left(
         Failure(title: 'Get all todos failed', error: e, stackTrace: st),
+      );
+    }
+  }
+
+  @override
+  EitherFailureOr<void> deleteTodo(String id) async {
+    try {
+      await _database.deleteTodo(id);
+      return Right(null);
+    } catch (e, st) {
+      return Left(
+        Failure(title: 'Delete todo failed', error: e, stackTrace: st),
       );
     }
   }

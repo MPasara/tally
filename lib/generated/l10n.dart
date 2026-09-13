@@ -319,6 +319,16 @@ class S {
       args: [],
     );
   }
+
+  /// `To do deleted`
+  String get todo_deleted {
+    return Intl.message(
+      'To do deleted',
+      name: 'todo_deleted',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

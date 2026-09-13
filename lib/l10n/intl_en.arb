@@ -26,5 +26,6 @@
   "due": "Due",
   "delete_todo": "Delete to do?",
   "delete_todo_desc": "Are you sure? This action cannot be undone.",
-  "delete": "Delete"
+  "delete": "Delete",
+  "todo_deleted": "To do deleted"
 }

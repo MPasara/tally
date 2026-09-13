@@ -9,6 +9,8 @@ import 'package:intl/intl.dart';
 import 'package:tally_mobile/app/theme/tally_colors.dart';
 import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
 import 'package:tally_mobile/features/todos/domain/task_urgency.dart';
+import 'package:tally_mobile/features/todos/presentation/logic/blocs/todo_bloc.dart';
+import 'package:tally_mobile/features/todos/presentation/logic/blocs/todo_events.dart';
 import 'package:tally_mobile/features/todos/presentation/logic/cubits/create_todo_cubit.dart';
 import 'package:tally_mobile/features/todos/presentation/logic/state/create_todo_state.dart';
 import 'package:tally_mobile/features/todos/presentation/widgets/urgency_selector_row.dart';
@@ -34,7 +36,9 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
       listener: (context, state) {
         switch (state) {
           case CreateTodoCreated():
-            Navigator.of(context).pop();
+            Navigator.of(context, rootNavigator: true).pop();
+            context.read<TodoBloc>().add(const RefreshTodos());
+
           case CreateTodoError(:final failure):
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text(failure.title)));
@@ -198,6 +202,7 @@ class _AddTodoBottomSheetState extends State<AddTodoBottomSheet> {
   }
 
   void _submit() {
+    //Navigator.of(context).pop();
     final isValid = _formKey.currentState?.saveAndValidate() ?? false;
     if (!isValid) return;
 
