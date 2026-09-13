@@ -18,6 +18,10 @@ migrate_working_dir/
 *.iws
 .idea/
 
+
+lib/generated/intl/
+lib/generated/l10n.dart
+lib/l10n/intl_en.arb
 #Env variables
 /.env
 
