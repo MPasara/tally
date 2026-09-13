@@ -1,0 +1,49 @@
+import 'package:injectable/injectable.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:sembast/sembast_io.dart';
+import 'package:tally_mobile/common/utils/sembast_constants.dart';
+import 'package:tally_mobile/features/todos/domain/entities/todo.dart';
+
+abstract interface class DatabaseService {
+  Future<void> initDatabase();
+  Future<void> createTodo(Todo todo);
+  Future<List<Todo>> fetchAllTodos();
+  Future<void> deleteTodo(String id);
+}
+
+@LazySingleton(as: DatabaseService)
+class DatabaseServiceImpl implements DatabaseService {
+  final _storeRef = stringMapStoreFactory.store(
+    SembastConstants.todosStore,
+  ); // was intMapStoreFactory
+  late final Database _database;
+
+  @override
+  Future<void> initDatabase() async {
+    final dir = await getApplicationDocumentsDirectory();
+    await dir.create(recursive: true);
+    final dbPath = join(dir.path, SembastConstants.dbName);
+    _database = await databaseFactoryIo.openDatabase(dbPath);
+  }
+
+  @override
+  Future<void> createTodo(Todo todo) async {
+    await _storeRef.record(todo.id).put(_database, todo.toMap());
+  }
+
+  @override
+  Future<List<Todo>> fetchAllTodos() async {
+    final records = await _storeRef.find(
+      _database,
+      finder: Finder(sortOrders: [SortOrder('dueDate')]),
+    );
+
+    return records.map((record) => todoFromMap(record.value)).toList();
+  }
+
+  @override
+  Future<void> deleteTodo(String id) async {
+    await _storeRef.record(id).delete(_database);
+  }
+}
